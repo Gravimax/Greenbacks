@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8A29B264-98AB-4DBE-8250-C1845D227A4B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Greenbacks</RootNamespace>
+    <AssemblyName>Greenbacks</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.3.0.19026, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.3.0.19032, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.3.0.19032, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Itenso.Windows.Controls.ListViewLayout">
+      <HintPath>F:\Development\C#\Dlls\Itenso.Windows.Controls.ListViewLayout.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AppConfiguration\ApplicationConfiguration.cs" />
+    <Compile Include="Controls\ApplicationMenu.xaml.cs">
+      <DependentUpon>ApplicationMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AppTabsControl.xaml.cs">
+      <DependentUpon>AppTabsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CategoryManagement.xaml.cs">
+      <DependentUpon>CategoryManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CloseableTabItem.cs" />
+    <Compile Include="Controls\Dashboard.xaml.cs">
+      <DependentUpon>Dashboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ImportStatementControl.xaml.cs">
+      <DependentUpon>ImportStatementControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NotificationMessage.xaml.cs">
+      <DependentUpon>NotificationMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PayeeManagement.xaml.cs">
+      <DependentUpon>PayeeManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PayeeTracking.xaml.cs">
+      <DependentUpon>PayeeTracking.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ReportsControl.xaml.cs">
+      <DependentUpon>ReportsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Summary.xaml.cs">
+      <DependentUpon>Summary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TransactionList.xaml.cs">
+      <DependentUpon>TransactionList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BackgroundConverter.cs" />
+    <Compile Include="Converters\CurrencyConverter.cs" />
+    <Compile Include="Database\DALAccounts.cs" />
+    <Compile Include="Database\DALAccountTypes.cs" />
+    <Compile Include="Database\DALCategories.cs" />
+    <Compile Include="Database\DALCategoryTypes.cs" />
+    <Compile Include="Database\DALPayees.cs" />
+    <Compile Include="Database\DALPayeeTracking.cs" />
+    <Compile Include="Database\DALStatementPayees.cs" />
+    <Compile Include="Database\DALTransactions.cs" />
+    <Compile Include="Events\Args\AccountChangedEventArgs.cs" />
+    <Compile Include="Events\Args\AccountTypeChangedEventArgs.cs" />
+    <Compile Include="Events\Args\AddRecordEventArgs.cs" />
+    <Compile Include="Events\Args\AddTabEventArgs.cs" />
+    <Compile Include="Events\Args\CategoryChangedEventArgs.cs" />
+    <Compile Include="Events\Args\CategoryTypeChangedEventArgs.cs" />
+    <Compile Include="Events\Args\PayeeChangedEventArgs.cs" />
+    <Compile Include="Events\Args\PreviousTransactionEventArgs.cs" />
+    <Compile Include="Events\Args\RecordsLoadedEventArgs.cs" />
+    <Compile Include="Events\Args\RecordsSavedEventArgs.cs" />
+    <Compile Include="Events\Args\RecordUpdatedEventHandler.cs" />
+    <Compile Include="Events\Args\ScrollToRecordEventArgs.cs" />
+    <Compile Include="Events\Args\TableChangedEventArgs.cs" />
+    <Compile Include="Events\Args\TransactionChangedEventArgs.cs" />
+    <Compile Include="Events\Args\TransferFundsArgs.cs" />
+    <Compile Include="Events\Delegates.cs" />
+    <Compile Include="Helpers\ExceptionLogger.cs" />
+    <Compile Include="Helpers\Security.cs" />
+    <Compile Include="ImportData\IImport.cs" />
+    <Compile Include="ImportData\Models\AvailableBalance.cs" />
+    <Compile Include="ImportData\Models\BankAccountInfo.cs" />
+    <Compile Include="ImportData\Models\BankTransaction.cs" />
+    <Compile Include="ImportData\Models\IImportHeader.cs" />
+    <Compile Include="ImportData\Models\ImportHeader.cs" />
+    <Compile Include="ImportData\Models\ImportModel.cs" />
+    <Compile Include="ImportData\Models\LedgerBalance.cs" />
+    <Compile Include="ImportData\Models\Status.cs" />
+    <Compile Include="ImportData\Quicken\ImportQuicken.cs" />
+    <Compile Include="ImportData\Quicken\QuickenHeader.cs" />
+    <Compile Include="Messages\AddTabMessage.cs" />
+    <Compile Include="Messages\DeleteAccountMessage.cs" />
+    <Compile Include="Messages\EditAccountMessage.cs" />
+    <Compile Include="Messages\EventMessage.cs" />
+    <Compile Include="Messages\ExitAppMessage.cs" />
+    <Compile Include="Messages\ExportAccountMessage.cs" />
+    <Compile Include="Messages\ImportStatamentMessage.cs" />
+    <Compile Include="Messages\TransferFundsMessage.cs" />
+    <Compile Include="Messages\UpdateAccountSummariesMessage.cs" />
+    <Compile Include="Models\ConnectionProperties.cs" />
+    <Compile Include="Models\ConnectionProperty.cs" />
+    <Compile Include="Models\GenericComboItem.cs" />
+    <Compile Include="Models\GreenbacksConfiguration.cs" />
+    <Compile Include="Models\ImportTransTemp.cs" />
+    <Compile Include="Models\NewAccountModel.cs" />
+    <Compile Include="RecordValidation\Records\AccountValidation.cs" />
+    <Compile Include="RecordValidation\Records\IValidateRecord.cs" />
+    <Compile Include="RecordValidation\Records\NewAccountValidation.cs" />
+    <Compile Include="RecordValidation\Records\PayeeValidation.cs" />
+    <Compile Include="RecordValidation\RecordValidationBase.cs" />
+    <Compile Include="RecordValidation\Records\TransactionValidation.cs" />
+    <Compile Include="ViewModels\ApplicationViewModel.cs" />
+    <Compile Include="ViewModels\DashboardViewModel.cs" />
+    <Compile Include="ViewModels\ImportStatementViewModel.cs" />
+    <Compile Include="ViewModels\ManageCategoriesViewModel.cs" />
+    <Compile Include="ViewModels\ManagePayeesViewModel.cs" />
+    <Compile Include="ViewModels\TransactionsViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="Views\AccountDelete.xaml.cs">
+      <DependentUpon>AccountDelete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddEditCategory.xaml.cs">
+      <DependentUpon>AddEditCategory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddEditPayee.xaml.cs">
+      <DependentUpon>AddEditPayee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditAccount.xaml.cs">
+      <DependentUpon>EditAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditConfiguration.xaml.cs">
+      <DependentUpon>EditConfiguration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewAccount.xaml.cs">
+      <DependentUpon>NewAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TransactionEntry.xaml.cs">
+      <DependentUpon>TransactionEntry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TransferFunds.xaml.cs">
+      <DependentUpon>TransferFunds.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Controls\ApplicationMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\AppTabsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CategoryManagement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Dashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ImportStatementControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\NotificationMessage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\PayeeManagement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\PayeeTracking.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ReportsControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Summary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\TransactionList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Helpers\AssemblyInfoHelper.cs" />
+    <Compile Include="Helpers\CollectionExtentions.cs" />
+    <Compile Include="Helpers\DatabaseUtilities.cs" />
+    <Compile Include="Helpers\DateUtilities.cs" />
+    <Compile Include="Helpers\DefaultTables.cs" />
+    <Compile Include="Helpers\DelegateCommand.cs" />
+    <Compile Include="Helpers\Enumerators.cs" />
+    <Compile Include="Helpers\FileUtilities.cs" />
+    <Compile Include="Helpers\Utilities.cs" />
+    <Compile Include="Helpers\WpfSingleInstance.cs" />
+    <Compile Include="Helpers\XMLFileIO.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Resources\ColorsAndBrushes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Converters.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\GridViewColumnStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Standard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AccountDelete.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AddEditCategory.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AddEditPayee.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\EditAccount.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\EditConfiguration.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\NewAccount.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TransactionEntry.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TransferFunds.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Greenbacks.Common\Greenbacks.Common.csproj">
+      <Project>{A112B070-6E91-42C9-A21B-95486D4680C9}</Project>
+      <Name>Greenbacks.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Greenbacks.DatabaseAccess\Greenbacks.DatabaseAccess.csproj">
+      <Project>{349d6250-1021-4ca2-be8d-df753ce432ba}</Project>
+      <Name>Greenbacks.DatabaseAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\add-32x32.png" />
+    <Resource Include="Resources\Images\Add.png" />
+    <Resource Include="Resources\Images\close_program_32x32.png" />
+    <Resource Include="Resources\Images\currency3.jpg" />
+    <Resource Include="Resources\Images\disk.png" />
+    <Resource Include="Resources\Images\greenbacks.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

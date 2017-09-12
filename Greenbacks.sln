@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greenbacks", "Greenbacks\Greenbacks.csproj", "{8A29B264-98AB-4DBE-8250-C1845D227A4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greenbacks.Common", "Greenbacks.Common\Greenbacks.Common.csproj", "{A112B070-6E91-42C9-A21B-95486D4680C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greenbacks.DatabaseAccess", "Greenbacks.DatabaseAccess\Greenbacks.DatabaseAccess.csproj", "{349D6250-1021-4CA2-BE8D-DF753CE432BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A29B264-98AB-4DBE-8250-C1845D227A4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A29B264-98AB-4DBE-8250-C1845D227A4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A29B264-98AB-4DBE-8250-C1845D227A4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A29B264-98AB-4DBE-8250-C1845D227A4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A112B070-6E91-42C9-A21B-95486D4680C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A112B070-6E91-42C9-A21B-95486D4680C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A112B070-6E91-42C9-A21B-95486D4680C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A112B070-6E91-42C9-A21B-95486D4680C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{349D6250-1021-4CA2-BE8D-DF753CE432BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{349D6250-1021-4CA2-BE8D-DF753CE432BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{349D6250-1021-4CA2-BE8D-DF753CE432BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{349D6250-1021-4CA2-BE8D-DF753CE432BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

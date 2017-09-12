@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="Greenbacks.Controls.PayeeTracking"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ctrl="clr-namespace:Itenso.Windows.Controls.ListViewLayout;assembly=Itenso.Windows.Controls.ListViewLayout"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             MinHeight="100"
+             d:DesignHeight="200"
+             d:DesignWidth="500"
+             mc:Ignorable="d">
+    <Grid>
+        <GroupBox>
+            <GroupBox.Header>
+                <Label Content="Payee Tracking" FontWeight="Bold" />
+            </GroupBox.Header>
+            <ListView x:Name="lstTrackingSummary"
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch"
+                      ctrl:ListViewLayoutManager.Enabled="true"
+                      Background="White"
+                      BorderThickness="0"
+                      ClipToBounds="True"
+                      ItemContainerStyle="{StaticResource myItemStyle}"
+                      ItemsSource="{Binding Path=TrackingSummary}"
+                      SelectedValue="{Binding Path=Id}"
+                      SelectedValuePath="Id">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn ctrl:ProportionalColumn.Width="1"
+                                        DisplayMemberBinding="{Binding Path=BankName}"
+                                        Header="Account" />
+                        <GridViewColumn ctrl:ProportionalColumn.Width="1"
+                                        DisplayMemberBinding="{Binding Path=PayeeName}"
+                                        Header="Payee Name" />
+                        <GridViewColumn Width="75" Header="Due On">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=DueDate}" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="80" Header="Payment">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Amount, StringFormat=\{0:c\}}" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </GroupBox>
+    </Grid>
+</UserControl>

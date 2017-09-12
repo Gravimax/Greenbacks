@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ced8b665d5c549a09013a0debdf81f4a" Name="Diagram1">
+        <EntityTypeShape EntityType="GreenbacksDBModel.Account" Width="1.5" PointX="3.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GreenbacksDBModel.AccountType" Width="1.5" PointX="1.375" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="GreenbacksDBModel.Category" Width="1.5" PointX="8.375" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GreenbacksDBModel.CategoryType" Width="1.5" PointX="8.375" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GreenbacksDBModel.Payee" Width="1.5" PointX="3.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GreenbacksDBModel.PayeeTrack" Width="1.5" PointX="1.5" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GreenbacksDBModel.Transaction" Width="1.5" PointX="6" PointY="3.25" IsExpanded="true" />
+        <AssociationConnector Association="GreenbacksDBModel.FK_Account_AccountType" ManuallyRouted="false" />
+        <AssociationConnector Association="GreenbacksDBModel.FK_Transaction_Account" ManuallyRouted="false" />
+        <AssociationConnector Association="GreenbacksDBModel.FK_Category_CategoryType" ManuallyRouted="false" />
+        <AssociationConnector Association="GreenbacksDBModel.FK_Transaction_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="GreenbacksDBModel.FK_PayeeTrack_Payees" ManuallyRouted="false" />
+        <AssociationConnector Association="GreenbacksDBModel.FK_Transaction_Payee" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="GreenbacksDBModel.StatementPayee" Width="1.5" PointX="3.75" PointY="8.375" />
+        <AssociationConnector Association="GreenbacksDBModel.FK_StatementPayee_Payee" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

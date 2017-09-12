@@ -1,0 +1,90 @@
+﻿<UserControl
+    x:Class="Greenbacks.Controls.Summary"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Platform"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    MinHeight="100"
+    d:DesignHeight="300"
+    d:DesignWidth="500"
+    mc:Ignorable="d">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="35" />
+        </Grid.RowDefinitions>
+        <GroupBox Grid.Row="0">
+            <GroupBox.Header>
+                <Label Content="Accounts" FontWeight="Bold" />
+            </GroupBox.Header>
+            <ListView
+                x:Name="lstAccountSummary"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Background="White"
+                BorderThickness="0"
+                ClipToBounds="True"
+                DisplayMemberPath="Description"
+                ItemContainerStyle="{StaticResource myItemStyle}"
+                ItemsSource="{Binding Path=AccountSummaries}"
+                SelectedItem="{Binding Path=SelectedAccount, Mode=TwoWay}"
+                SelectedValue="{Binding Path=Id}"
+                SelectedValuePath="Id"
+                ToolTip="Double click to view account transactions or right click for menu.">
+                <ListView.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem
+                            Name="miEditAccount"
+                            Command="{Binding Path=EditAccountCommand}"
+                            CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"
+                            Header="Edit" />
+                        <MenuItem
+                            Name="miNewAccount"
+                            Command="{Binding Path=NewAccountCommand}"
+                            CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"
+                            Header="New" />
+                        <MenuItem
+                            Name="miTransferFunds"
+                            Command="{Binding Path=TransferFundsCommand}"
+                            CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"
+                            Header="Transfer Funds" />
+                    </ContextMenu>
+                </ListView.ContextMenu>
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseDoubleClick">
+                        <cmd:EventToCommand Command="{Binding DoubleClickItemCommand}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ListView>
+        </GroupBox>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
+            <Label
+                Margin="0,0,10,0"
+                Content="Income:"
+                FontWeight="Bold" />
+            <Label Grid.Column="1" Content="{Binding Path=TotalIncome, StringFormat=\{0:C\}}" />
+            <Label
+                Grid.Column="2"
+                Margin="0,0,10,0"
+                Content="Expenses:"
+                FontWeight="Bold" />
+            <Label Grid.Column="3" Content="{Binding Path=TotalExpenses, StringFormat=\{0:C\}}" />
+            <Label
+                Grid.Column="4"
+                Margin="0,0,10,0"
+                Content="Balance:"
+                FontWeight="Bold" />
+            <Label Grid.Column="5" Content="{Binding Path=TotalBalance, StringFormat=\{0:C\}}" />
+        </Grid>
+    </Grid>
+</UserControl>

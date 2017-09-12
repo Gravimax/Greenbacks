@@ -1,0 +1,102 @@
+﻿<Window
+    x:Class="Greenbacks.View.EditAccount"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Edit Account"
+    Width="400"
+    Height="290"
+    DataContext="{Binding}"
+    WindowStartupLocation="CenterOwner">
+    <Grid Background="{DynamicResource GreyGradient}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="110" />
+            <ColumnDefinition Width="100*" />
+        </Grid.ColumnDefinitions>
+        <Label
+            Grid.Row="0"
+            Grid.Column="0"
+            Content="Account Name:" />
+        <TextBox
+            Grid.Row="0"
+            Grid.Column="1"
+            Text="{Binding Path=AccountName}" />
+        <Label
+            Grid.Row="1"
+            Grid.Column="0"
+            Content="Account Number*:" />
+        <PasswordBox
+            x:Name="pswdAccountNumber"
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="5" />
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Margin="5"
+            Text="*(Optional) This is used for auto-importing a quicken file from your bank. The account number is not stored in plaintext for security."
+            TextWrapping="Wrap" />
+        <Label
+            Grid.Row="3"
+            Grid.Column="0"
+            Content="Bank Name:" />
+        <TextBox
+            Grid.Row="3"
+            Grid.Column="1"
+            Text="{Binding Path=BankName}" />
+        <Label
+            Grid.Row="4"
+            Grid.Column="0"
+            Content="Account Type:" />
+        <ComboBox
+            Grid.Row="4"
+            Grid.Column="1"
+            DisplayMemberPath="Name"
+            IsEnabled="False"
+            ItemsSource="{Binding Path=AccountTypes}"
+            SelectedValue="{Binding Path=AccountTypeId}"
+            SelectedValuePath="Id" />
+        <Label
+            Grid.Row="5"
+            Grid.Column="0"
+            Content="Notes:" />
+        <TextBox
+            Grid.Row="5"
+            Grid.Column="1"
+            Text="{Binding Path=Notes}" />
+        <StackPanel
+            Grid.Row="7"
+            Grid.Column="1"
+            Margin="0,0,5,5"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Orientation="Horizontal">
+            <Button
+                Name="btnCancel"
+                Width="75"
+                Height="23"
+                Margin="0,0,5,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Click="btnCancel_Click"
+                Content="Cancel" />
+            <Button
+                Name="btnOk"
+                Width="75"
+                Height="23"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Click="btnOk_Click"
+                Content="Ok" />
+        </StackPanel>
+    </Grid>
+</Window>

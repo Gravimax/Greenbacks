@@ -1,0 +1,55 @@
+﻿<Window x:Class="Greenbacks.Views.EditConfiguration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Edit Configuration"
+        Width="300"
+        Height="185"
+        WindowStartupLocation="CenterOwner">
+    <Grid Background="{StaticResource GreyGradient}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+        <GroupBox Grid.Row="0"
+                  Height="100"
+                  Margin="0,5,0,0"
+                  VerticalAlignment="Top"
+                  BorderBrush="DarkGray"
+                  BorderThickness="1">
+            <GroupBox.Header>Application</GroupBox.Header>
+            <StackPanel Orientation="Vertical">
+                <CheckBox Name="chkRememberLastLocation"
+                          Grid.Row="1"
+                          Height="16"
+                          Margin="5,5,0,5"
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Center"
+                          Content="Remember last window location"
+                          IsChecked="{Binding Path=TempConfig.RememberLastLocation}" />
+                <CheckBox Name="chkRememberSize"
+                          Grid.Row="1"
+                          Height="16"
+                          Margin="5,5,0,5"
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Center"
+                          Content="Remember window size"
+                          IsChecked="{Binding Path=TempConfig.RememberWindowSize}" />
+            </StackPanel>
+        </GroupBox>
+        <StackPanel Grid.Row="1"
+                    Margin="0,0,5,5"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Bottom"
+                    Orientation="Horizontal">
+            <Button x:Name="btnCancel"
+                    Width="75"
+                    Margin="0,0,5,0"
+                    Click="btnCancel_Click"
+                    Content="Cancel" />
+            <Button x:Name="btnSave"
+                    Width="75"
+                    Click="btnSave_Click"
+                    Content="Save" />
+        </StackPanel>
+    </Grid>
+</Window>

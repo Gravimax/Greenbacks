@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="Greenbacks.Controls.NotificationMessage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="400">
+    <UserControl.Resources>
+        <Storyboard x:Key="OpenMessageAnimation">
+            <DoubleAnimation AutoReverse="False"
+                             Completed="DoubleAnimation_Completed"
+                             Duration="0:0:.3"
+                             From="0"
+                             Storyboard.TargetName="notificationMessage"
+                             Storyboard.TargetProperty="Opacity"
+                             To="1" />
+        </Storyboard>
+
+        <Storyboard x:Key="CloseMessageAnimation">
+            <DoubleAnimation AutoReverse="False"
+                             BeginTime="0:0:4"
+                             Duration="0:0:.3"
+                             Storyboard.TargetName="notificationMessage"
+                             Storyboard.TargetProperty="Opacity"
+                             To="0" />
+        </Storyboard>
+    </UserControl.Resources>
+    <Grid>
+        <Border x:Name="notificationMessage"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Background="Green"
+                Grid.Row="1"
+                Opacity="0">
+            <Label x:Name="txtStatusMessage"
+                       Margin="10,0,10,0"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Stretch"
+                       FontWeight="SemiBold"
+                       Foreground="White"
+                       FontSize="12" />
+        </Border>
+    </Grid>
+</UserControl>

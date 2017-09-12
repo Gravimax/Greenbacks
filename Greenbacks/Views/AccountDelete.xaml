@@ -1,0 +1,53 @@
+﻿<Window
+    x:Class="Greenbacks.View.AccountDelete"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="AccountDelete"
+    Width="400"
+    Height="165"
+    WindowStartupLocation="CenterOwner">
+    <Grid Background="{DynamicResource GreyGradient}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Label Name="label1" Content="Select an account to delete:" />
+        <ComboBox
+            Name="cmbAccountList"
+            Grid.Row="1"
+            DisplayMemberPath="Description"
+            SelectedItem="{Binding Path=Result, Mode=TwoWay}" />
+        <CheckBox
+            Name="chkBackupAccount"
+            Grid.Row="2"
+            Height="16"
+            Margin="5,0,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Content="Backup account" />
+        <StackPanel
+            Grid.Row="3"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Orientation="Horizontal">
+            <Button
+                Name="btnCancel"
+                Width="75"
+                Margin="0,0,10,5"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Click="btnCancel_Click"
+                Content="Cancel" />
+            <Button
+                Name="btnDelete"
+                Width="75"
+                Margin="0,0,5,5"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Click="btnDelete_Click"
+                Content="Delete" />
+        </StackPanel>
+    </Grid>
+</Window>
